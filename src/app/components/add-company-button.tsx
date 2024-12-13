@@ -3,7 +3,6 @@
 import React, {useState} from 'react'
 import dynamic from 'next/dynamic';
 import {Button} from "@headlessui/react";
-// import CompanyFormModal from "@/src/app/components/company-form-modal";
 const CompanyFormModal = dynamic(() => import('./company-form-modal'), {
     ssr: false,
 });
