@@ -44,7 +44,7 @@ export interface Company {
   avatar?: string;
 }
 
-export interface Promotion {
+export interface PromotionInt {
   id: string;
   title: string;
   description: string;
@@ -54,7 +54,7 @@ export interface Promotion {
   avatar?: string;
 }
 
-const PROJECT_TOKEN = process.env.PROJECT_TOKEN;
+const PROJECT_TOKEN = process.env.NEXT_PUBLIC_PROJECT_TOKEN;
 
 const buildUrl = (...paths: string[]) =>
   `https://${PROJECT_TOKEN}.mockapi.io/api/v1/${paths.join('/')}`;
@@ -99,7 +99,7 @@ export const getPromotions = async (
   params: Record<string, string> = {},
   init?: RequestInit,
 ) => {
-  return sendRequest<Promotion[]>(
+  return sendRequest<PromotionInt[]>(
     `${buildUrl('promotions')}?${stringifyQueryParams(params)}`,
     init,
   );
